@@ -1,0 +1,23 @@
+{
+  "name": "librecast-server",
+  "version": "1.0.0",
+  "description": "The server used for LibreCast. It serves the LibreCast API.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Libre-Cast/server.git"
+  },
+  "author": "BurnyLlama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Libre-Cast/server/issues"
+  },
+  "homepage": "https://github.com/Libre-Cast/server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
