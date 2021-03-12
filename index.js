@@ -5,7 +5,7 @@ import uptime from './lib/uptime.js'
 
 const server = express()
 
-const port = 13831
+const port = 18381
 
 server.use('/', api)
 

@@ -5,19 +5,17 @@ import settings from '../lib/settings.js'
 const serverApi = Router()
 
 serverApi.get('/status', (_, res) => {
-    const status = {
-        name: settings.get(),
+    res.json({
+        name: settings.get("name"),
         uptime: uptime.getElapsedTime(),
-        allowConnections: true,
+        allowConnections: settings.get("allowConnections"),
         casting: {
             type: "Image",
             media: {
                 name: "Image.jpg"
             }
         }
-    }
-
-    res.send(JSON.stringify(status))
+    })
 })
 
 export default serverApi
