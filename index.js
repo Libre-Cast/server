@@ -6,6 +6,9 @@ import settings from './lib/settings.js'
 
 const server = express()
 
+server.use(express.json())
+server.use(express.urlencoded({ extended: true }))
+
 server.use('/', api)
 
 server.listen(settings.get("port"), () => {
