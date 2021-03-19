@@ -1,3 +1,5 @@
 import { Router } from 'express'
 
-export default Router().get('/', (req, res) => res.send("Hello!"))
+const castApi = Router()
+
+export default castApi
