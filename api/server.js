@@ -1,6 +1,8 @@
 import { Router } from 'express'
 import uptime from '../lib/uptime.js'
 import settings from '../lib/settings.js'
+import makeQrCode from '../lib/qrcode.js'
+
 
 const serverApi = Router()
 
@@ -24,5 +26,7 @@ serverApi.get('/status/casting', (_, res) => res.json({
         name: "Image.jpg"
     }
 }))
+
+serverApi.get('/qrCode/:type', (req, res) => res.send(makeQrCode(req.params.type)))
 
 export default serverApi
