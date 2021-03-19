@@ -9,6 +9,6 @@ settingsApi.get('/get', auth.checkForLocalhost, (_, res) => res.json(settings.ge
 settingsApi.get('/get/:key', auth.checkForLocalhost, (req, res) => res.json(settings.get(req.params.key)))
 
 settingsApi.post('/set', auth.checkForLocalhost, (_, res) => res.json(settings.setAll(/* Feed new settings */)))
-settingsApi.post('/set/:key', auth.checkForLocalhost, (req, res) => res.json(settings.set(req.params.key), /* Value */))
+settingsApi.post('/set/:key', auth.checkForLocalhost, (req, res) => res.json(settings.set(req.params.key, req.header("settingValue"))))
 
 export default settingsApi
