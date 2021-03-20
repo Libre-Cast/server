@@ -30,6 +30,13 @@ serverApi.get('/status/casting', (_, res) => res.json({
 
 serverApi.get('/qrCode/:type', (req, res) => res.send(makeQrCode(req.params.type)))
 
-serverApi.post('/notify', (req, res) => notify(req, res))
+serverApi.post('/notify', (req, res) => {
+    notify({
+        title: req.header("notiTitle") ? req.header("notiTitle") : "LibreCast Server",
+        message: req.header("notiMessage") ? req.header("notiMessage") : "Default message...",
+    })
+    res.end()
+})
+
 
 export default serverApi
