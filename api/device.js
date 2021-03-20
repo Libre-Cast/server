@@ -40,7 +40,7 @@ deviceApi.get('/info/:deviceID', auth.checkForLocalhost, (req, res) => {
 })
 
 deviceApi.get('/test', (req, res) => 
-    res.send(req.header("deviceKey") == devices.getInfo(req.header("deviceID")).key)
+    res.send(req.header("deviceKey") == devices.getInfo(req.header("deviceID")).key && devices.getInfo(req.header("deviceID")).trusted)
 )
 
 export default deviceApi
