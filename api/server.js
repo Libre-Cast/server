@@ -2,6 +2,7 @@ import { Router } from 'express'
 import uptime from '../lib/uptime.js'
 import settings from '../lib/settings.js'
 import makeQrCode from '../lib/qrcode.js'
+import notify from '../lib/notify.js'
 
 
 const serverApi = Router()
@@ -28,5 +29,7 @@ serverApi.get('/status/casting', (_, res) => res.json({
 }))
 
 serverApi.get('/qrCode/:type', (req, res) => res.send(makeQrCode(req.params.type)))
+
+serverApi.post('/notify', (req, res) => notify(req, res))
 
 export default serverApi
