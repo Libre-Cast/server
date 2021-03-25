@@ -1,0 +1,6 @@
+[
+    {
+        "type": "image",
+        "handlerFile": "./handlers/image.js"
+    }
+]
